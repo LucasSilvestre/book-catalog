@@ -1,6 +1,6 @@
 ## Introduction
 
-This project it's an integration with [gutendex](https://gutendex.com/]) to work with datas.
+This project it's an integration with [gutendex](https://gutendex.com/]) to work with his datas.
 
 ## Technologies
 
@@ -24,7 +24,7 @@ I used python 3.9 with the following libraries:
 │   ├── script.py.mako
 │   └── versions                                    # Migration files
 ├── alembic.ini
-├── app                                                   # Main folder with the API
+├── app                                             # Main folder with the API
 │   ├── gutendex                                    # Gutendex functions
 │   │   ├── finder.py
 │   │   ├── review.py
@@ -46,7 +46,7 @@ I used python 3.9 with the following libraries:
 ├── entrypoint.sh
 ├── README.md
 ├── requirements.txt
-└── tests                                                   # Tests
+└── tests                                             # Tests
     └── app
         └── router
             └── test_book.py
