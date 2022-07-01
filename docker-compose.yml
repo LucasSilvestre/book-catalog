@@ -1,0 +1,41 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:11.8-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: test
+      POSTGRES_USER: test
+      POSTGRES_DB: book-catalog
+    ports:
+      - "54320:5432"
+
+  api:
+    container_name: book-catalog
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .envfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/code/
+    links:
+      - db
+    depends_on:
+      - db
+
+  cache:
+    container_name: cache
+    image: redis:6-alpine
+    ports:
+      - "6379:6379"
+
+
+
+networks:
+  default:
+    external:
+      name: "book-catalog"

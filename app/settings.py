@@ -1,0 +1,5 @@
+import os
+
+GUTENDEX_URL = os.getenv('GUTENDEX_URL')
+DB_CONNECTION_STRING = os.getenv('DB_CONNECTION_STRING')
+CACHE_URL = os.getenv('CACHE_URL')
